@@ -2,7 +2,7 @@ package aulas_exercicios;
 
 import java.util.Scanner;
 
-public class exercicio3 {
+public class Exercicio3 {
 
 	public static void main(String[] args) {
 
@@ -14,7 +14,11 @@ public class exercicio3 {
 		for(int contador=1;contador<=numero;contador++) {
 			System.out.print("-"+contador);
 		}
+		System.out.println();
 		
+		for(int contador=numero; contador>=1;contador--) {
+			System.out.print(" "+contador);
+		}
 	}
 
 }
