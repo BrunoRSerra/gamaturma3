@@ -10,15 +10,16 @@ public class exercicio2 {
 		double salario, parcela, prestacao;
 		
 		
-		System.out.println("Digite o valor da prestação  ");
-		prestacao = teclado.nextDouble();
 		System.out.println("Qual seu salário ");
 		salario = teclado.nextDouble();
+		System.out.println("Digite o valor da prestação  ");
+		prestacao = teclado.nextDouble();
+	
 		
 		
 		parcela = salario*0.30;
 		
-		if(prestacao<parcela) {
+		if(prestacao<=parcela) {
 			System.out.println("Você pode pegar pegar o emprestimo");
 		
 		}else {
