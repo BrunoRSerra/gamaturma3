@@ -4,10 +4,18 @@ public class Agenda {
 	String nomePaciente;
 	String horaConsulta;
 	String nomeMedico;
+	int dia;
 	boolean confirmada;
 	String nomeProcedimento;
 	int quantidadeDeProcedimentos;
 	
+	void data() {
+		if(dia>=1 && dia <31) {
+			System.out.println("O dia da sua consutal esta marcado p/: "+dia);
+		}else {
+			System.out.println("A data esta incorreta ");
+		}
+	}
 	void mostrarAgenda() {
 		System.out.println("Paciente: "+this.nomePaciente);
 		System.out.println("Hora: "+this.horaConsulta);

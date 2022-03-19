@@ -11,10 +11,12 @@ public class ApiAgendarConsulta {
 		p1.nomeMedico="Doutor Pedro";
 		p1.nomeProcedimento="Extração";
 		p1.quantidadeDeProcedimentos=1;
-		
+		p1.dia=5;
+		p1.data();
 		p1.cancelada();
 		p1.procedimento();
 		p1.mostrarAgenda();
+		
 				
 	}
 
