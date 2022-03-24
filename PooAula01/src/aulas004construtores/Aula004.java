@@ -6,7 +6,7 @@ public class Aula004 {
 		
 		Caneta c1 = new Caneta("Big", "Rosa", 0.08f);
 		
-		c1.status();
+		
 	}
 
 }

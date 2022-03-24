@@ -6,7 +6,7 @@ public class Caneta {
 	private boolean tampada;
 	private String cor;
 	
-	public Caneta(String modelo, float ponta, String cor) {
+	public Caneta(String modelo, String cor, float ponta) {
 		this.modelo = modelo;
 		this.ponta = ponta;
 		this.cor = cor;
