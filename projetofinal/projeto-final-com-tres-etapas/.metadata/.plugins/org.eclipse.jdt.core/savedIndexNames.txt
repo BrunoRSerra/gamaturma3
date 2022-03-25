@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+C:\Users\Bruno Serra\Documents\Gama\projeto-final-com-tres-etapas\.metadata\.plugins\org.eclipse.jdt.core
+3464674348.index
+2988933519.index
+1603127096.index
+3389450013.index
+2071101411.index
+2837831419.index
+1865797976.index

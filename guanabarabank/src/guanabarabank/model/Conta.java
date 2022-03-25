@@ -1,78 +1,104 @@
 package guanabarabank.model;
 
 public class Conta {
-	public String dono;
-	private int numeroConta;
+	public int numeroConta;
+	protected String tipo;
+	private String dono;
 	private double saldo;
+	private boolean status;
 	
 	
-	
-	public Conta(String dono, int numeroConta,double saldo) {
-		this.fechada();
-		this.numeroConta = numeroConta;
-		this.dono= dono;
-		this.saldo= saldo;
-		
+	public Conta() {
+		saldo =0;
+		status= false;
 	}
-	public boolean saque(double valorSaque) {
-		if(saldo>valorSaque) {
-			saldo-=valorSaque;
-			return true;
-		}else {
-			System.out.println("Você não tem saldo ");
-			return false;
-		}
+	public void setStatus(boolean st) {
+		this.status = st;
 	}
 	
-	public boolean numerodaConta() {
-		if(this.numeroConta>0) {
-			return true;
-		}else {
-			System.out.println("Você não tem saldo o suficiente");
-			return false;
-		}
+	public boolean getStatus() {
+		return status;
 	}
-	
-	public boolean deposita(double valorDeposito) {
-		if(valorDeposito<0) {
-			saldo += valorDeposito;
-			return true;
-		}else {
-			System.out.println("Valor depoisto invalido");
-			return false;
-		}
-	}
-	public void visiibilidade() {
-		System.out.println("Titular"+this.getDono());
-		System.out.println();
-	}
-	
-	public boolean aberta() {
-		return true;
-	}
-	public boolean fechada() {
-		return false;
-	}
-	public String getDono() {
-		return dono;
-	}
-	public void setDono(String dono) {
-		this.dono = dono;
-	}
-	public int getNumeroConta() {
-		return numeroConta;
-	}
-	public void setNumeroConta(int numeroConta) {
-		this.numeroConta = numeroConta;
+	public void setSaldo(double s) {
+		this.saldo = s;
 	}
 	public double getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
+	
+	public void setNumeroConta(int n) {
+		this.numeroConta = n;
+	}
+	public int getNumeroConta() {
+		return numeroConta;
+	}
+	public void setTipo(String t) {
+		this.tipo = t;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setDono(String d) {
+		this.dono = d;
+	}
+	public String getDono() {
+		return dono;
 	}
 	
+	public void abrirConta(String t) {
+		setTipo(t);
+		setStatus(true);
+		if(t =="CC" ||t=="cc") {
+			setSaldo(50);
+		}else if(t =="CP" || t=="cp") {
+			setSaldo(150);
+		}
+		
+	}
+	public void fechaConta() {
+		if(saldo>0){
+			System.out.println("Conta tem saldo");
+			System.out.println(getSaldo());
+		}else if(saldo<0) {
+			System.out.println("Saldo negativo precisa zerar");
+			System.out.println(saldo);
+		}else {
+			setStatus(false);
+		}
+	}
+	public void depositar(double v) {
+		if(getStatus()==true) {
+			setSaldo(getSaldo()+v);
+		}else {
+			System.out.println("Impossível depositar");
+		}
+		
+	}
+	public void sacar(double v) {
+		if(getStatus()==true) {
+		}else {
+			System.out.println("Impossível depositar");
+		}
+		if(getSaldo()>v) {
+			setSaldo(getSaldo()-v);
+		}else {
+			System.out.println("Sem saldo");
+		}
+	}
 	
-	
+	public void pagarMensalidade() {
+		int v;
+		if(getTipo()=="cc" || getTipo()=="CC") {
+			v=12;
+		}else if(getTipo()=="cp"|| getTipo()=="CP"){
+			v=20;
+		}
+	}if(getStatus()== true) {
+		if(getSaldo()>v) {
+			setSaldo(getSaldo()-v);
+		}else {
+			System.out.println("Saldo insuficiente");
+		}
+	}
 	
 }
